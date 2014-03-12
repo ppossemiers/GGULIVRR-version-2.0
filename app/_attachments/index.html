@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GGULIVRR</title>
+    <link rel='stylesheet' href='style/bootstrap.min.css' type='text/css'/>
+    <link rel='stylesheet' href='style/main.css' type='text/css'/>
+    <link rel='apple-touch-icon' href='img/icon.png'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+    <meta name='apple-mobile-web-app-capable' content='yes'/>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/> 
+  </head>
+  <body class='unselectable'>
+  	<div class='navbar navbar-fixed-top' id='buttons'>  
+  		<div class='navbar-inner'>
+    		<div class='container'>
+    		<ul class='nav'>
+				<li><button id='scan' class='menubutton' onclick='document.querySelector("input").click()'>Scan QR</button></li>
+				<li><button id='upload' class='menubutton' onclick='_putUsrDoc()'>Upload</button></li>
+				<input style='visibility: collapse; width: 0px;' type='file' accept='image/*' onchange='_scanQR(this.files[0])'>
+			</ul>
+			</div>
+		</div>
+	</div>
+  	<div id='login' class='well' style='margin:20px 20px;'>
+		<input type='text' id='user' placeholder='UserID'/><br/>
+		<input type='text' id='team' placeholder='Team'/><br/>
+		<input type='text' id='db' placeholder='Game'/><br/>
+		<input type='checkbox' id='reload' />&nbsp;Reload game<br/>
+		<input type='checkbox' id='clear' />&nbsp;Clear game state<br/><br/>
+		<button class='btn' onClick='_login()'>Start</button>
+	</div>
+	<div id='webview' style='margin:20px 20px;'></div>
+	<div id='spinner' class='spinner'><img src='img/wait.gif'/></div>
+  </body>
+	<script src='scripts/zepto.min.js'></script>
+	<script src='scripts/bootstrap.min.js'></script>
+	<script src='scripts/jszip.min.js'></script>
+	<script src='scripts/jszip.load.min.js'></script>
+	<script src='scripts/jszip.inflate.min.js'></script>
+	<script src='scripts/qrcode.js'></script>
+	<script src='scripts/crafty.min.js'></script>
+	<script src='scripts/hammer.min.js'></script>
+	<script src='scripts/main.js'></script>
+</html>

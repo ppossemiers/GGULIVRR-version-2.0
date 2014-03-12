@@ -1,0 +1,1 @@
+{"env":{"staging":{"db":"http:\/\/root:secret@127.0.0.1:5984\/ggulivrr"},"default":{"db":"http:\/\/root:s3cr3t@3mobile.cloudant.com\/ggulivrr"},"production":{"db":""}}}
