@@ -130,7 +130,7 @@ function _display(docName){
 				$('#webview').empty();
 				Crafty.stop(true);
 				var htmlString = _zip.file('html/' + _doc).asText();
-				//if(_jscript!==null){ htmlString += '<script type="text/javascript">'+ _jscript + '</script>'; }
+				if(_jscript!==null){ htmlString += '<script type="text/javascript">'+ _jscript + '</script>'; }
 				$('#webview').html(_getImages(htmlString));
 				$('form').submit(function(){
 					try{ process($(this).serializeArray(), _doc); }
