@@ -287,7 +287,7 @@ function _login(){
 		localStorage.setItem('ggulivrr_team', _team);
 		localStorage.setItem('ggulivrr_game', _game);
 		//_ggulivrrDBURL = _team + _ggulivrrDBURL + 'ggulivrrdb/';
-		_ggulivrrDBURL = _ggulivrrDBURL + 'ggulivrrdb/';
+		_ggulivrrDBURL = _ggulivrrDBURL + 'ggulivrr/';
 		innerLoad();
 		if($('#clear').is(':checked')===true){ localStorage.removeItem(_usr); }
 		try{
