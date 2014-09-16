@@ -9,8 +9,8 @@ var _answers = {};
 var _background = null;
 var _zip = null;
 var _ggulivrrDB = null;
-//var _ggulivrrDBURL = '.cloudant.com/';
-var _ggulivrrDBURL = '127.0.0.1:5984/';
+var _ggulivrrDBURL = '.cloudant.com/';
+//var _ggulivrrDBURL = '127.0.0.1:5984/';
 
 // Public
 function detectMobile(){
@@ -43,6 +43,18 @@ function setNextItem(item){
 	var usrDoc = JSON.parse(localStorage.getItem(_usr));
 	usrDoc.nextItem = item;
 	localStorage.setItem(_usr, JSON.stringify(usrDoc));
+}
+
+//Public
+function getLocation(locationCallback){
+	navigator.geolocation.getCurrentPosition(function(pos){
+		navigator.geolocation.getCurrentPosition(locationCallback(pos)
+				, _errorGPS, { enableHighAccuracy: false, timeout: 10000, maximumAge: 0 });
+	}, _errorGPS, { enableHighAccuracy: false, timeout: 10000, maximumAge: 0 });
+}
+
+function _errorGPS(){
+	setMessage("Error getting location");
 }
 
 function _openDB(){
